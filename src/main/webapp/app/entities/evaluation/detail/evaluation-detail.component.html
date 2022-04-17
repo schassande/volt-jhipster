@@ -1,0 +1,196 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="evaluation">
+      <h2 data-cy="evaluationDetailsHeading"><span jhiTranslate="voltApp.evaluation.detail.title">Evaluation</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ evaluation.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.date">Date</span></dt>
+        <dd>
+          <span>{{ evaluation.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.trend">Trend</span></dt>
+        <dd>
+          <span>{{ evaluation.trend }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.comment">Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.comment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.maintenabilityRiskLevel">Maintenability Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.maintenabilityRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.maintenabilityImpactLevel">Maintenability Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.maintenabilityImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.maintenabilityMainImpact">Maintenability Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.maintenabilityMainImpact }}">{{
+            evaluation.maintenabilityMainImpact
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.maintenabilityComment">Maintenability Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.maintenabilityComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.maintenabilityAction">Maintenability Action</span></dt>
+        <dd>
+          <span>{{ evaluation.maintenabilityAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.performanceRiskLevel">Performance Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.performanceRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.performanceImpactLevel">Performance Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.performanceImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.performanceMainImpact">Performance Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.performanceMainImpact }}">{{ evaluation.performanceMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.performanceComment">Performance Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.performanceComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.performanceAction">Performance Action</span></dt>
+        <dd>
+          <span>{{ evaluation.performanceAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.indusRiskLevel">Indus Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.indusRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.indusImpactLevel">Indus Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.indusImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.indusMainImpact">Indus Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.indusMainImpact }}">{{ evaluation.indusMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.indusComment">Indus Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.indusComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.indusAction">Indus Action</span></dt>
+        <dd>
+          <span>{{ evaluation.indusAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.securityRiskLevel">Security Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.securityRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.securityImpactLevel">Security Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.securityImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.securityMainImpact">Security Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.securityMainImpact }}">{{ evaluation.securityMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.securityComment">Security Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.securityComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.securityAction">Security Action</span></dt>
+        <dd>
+          <span>{{ evaluation.securityAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.skillRiskLevel">Skill Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.skillRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.skillImpactLevel">Skill Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.skillImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.skillMainImpact">Skill Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.skillMainImpact }}">{{ evaluation.skillMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.skillComment">Skill Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.skillComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.skillAction">Skill Action</span></dt>
+        <dd>
+          <span>{{ evaluation.skillAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.environnementRiskLevel">Environnement Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.environnementRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.environnementImpactLevel">Environnement Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.environnementImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.environnementMainImpact">Environnement Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.environnementMainImpact }}">{{ evaluation.environnementMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.environnementComment">Environnement Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.environnementComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.environnementAction">Environnement Action</span></dt>
+        <dd>
+          <span>{{ evaluation.environnementAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.operabiltityRiskLevel">Operabiltity Risk Level</span></dt>
+        <dd>
+          <span>{{ evaluation.operabiltityRiskLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.operabiltityImpactLevel">Operabiltity Impact Level</span></dt>
+        <dd>
+          <span>{{ evaluation.operabiltityImpactLevel }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.operabiltityMainImpact">Operabiltity Main Impact</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'voltApp.Impact.' + evaluation.operabiltityMainImpact }}">{{ evaluation.operabiltityMainImpact }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.operabiltityComment">Operabiltity Comment</span></dt>
+        <dd>
+          <span>{{ evaluation.operabiltityComment }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.operabiltityAction">Operabiltity Action</span></dt>
+        <dd>
+          <span>{{ evaluation.operabiltityAction }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.author">Author</span></dt>
+        <dd>
+          <span>{{ evaluation.author?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.reviewer">Reviewer</span></dt>
+        <dd>
+          <span>{{ evaluation.reviewer?.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="voltApp.evaluation.project">Project</span></dt>
+        <dd>
+          <div *ngIf="evaluation.project">
+            <a [routerLink]="['/project', evaluation.project?.id, 'view']">{{ evaluation.project?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/evaluation', evaluation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

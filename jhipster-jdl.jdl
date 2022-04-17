@@ -1,0 +1,73 @@
+entity Project {
+	bu String
+	sector String
+	vertical String
+	client String
+	project String required
+}
+
+entity Evaluation {
+	date LocalDate
+    trend Integer
+    comment String
+    maintenabilityRiskLevel Integer
+    maintenabilityImpactLevel Integer
+    maintenabilityMainImpact Impact
+    maintenabilityComment String
+    maintenabilityAction String
+    performanceRiskLevel Integer
+    performanceImpactLevel Integer
+    performanceMainImpact Impact
+    performanceComment String
+    performanceAction String
+    indusRiskLevel Integer
+    indusImpactLevel Integer
+    indusMainImpact Impact
+    indusComment String
+    indusAction String
+    securityRiskLevel Integer
+    securityImpactLevel Integer
+    securityMainImpact Impact
+    securityComment String
+    securityAction String
+    skillRiskLevel Integer
+    skillImpactLevel Integer
+    skillMainImpact Impact
+    skillComment String
+    skillAction String
+    environnementRiskLevel Integer
+    environnementImpactLevel Integer
+    environnementMainImpact Impact
+    environnementComment String
+    environnementAction String
+    operabiltityRiskLevel Integer
+    operabiltityImpactLevel Integer
+    operabiltityMainImpact Impact
+    operabiltityComment String
+    operabiltityAction String
+}
+
+enum Impact {
+    Image, HR, Client, Financial, Contract
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Project{evaluations} to Evaluation{project},
+}
+relationship ManyToOne {
+	Evaluation{author} to User,
+	Evaluation{reviewer} to User,
+}
+
+// Set pagination options
+paginate Evaluation with infinite-scroll
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

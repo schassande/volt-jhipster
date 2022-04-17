@@ -1,0 +1,12 @@
+{
+  "voltApp": {
+    "Impact": {
+      "null": "",
+      "Image": "Image",
+      "HR": "HR",
+      "Client": "Client",
+      "Financial": "Financial",
+      "Contract": "Contract"
+    }
+  }
+}

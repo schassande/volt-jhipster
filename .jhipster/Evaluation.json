@@ -1,0 +1,194 @@
+{
+  "applications": "*",
+  "changelogDate": "20220330082519",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "evaluation",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "trend",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maintenabilityRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maintenabilityImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "maintenabilityMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "maintenabilityComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maintenabilityAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "performanceRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "performanceImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "performanceMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "performanceComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "performanceAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indusRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "indusImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "indusMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "indusComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "indusAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "securityRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "securityImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "securityMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "securityComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "securityAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "skillRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "skillImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "skillMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "skillComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "skillAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "environnementRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "environnementImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "environnementMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "environnementComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "environnementAction",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "operabiltityRiskLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "operabiltityImpactLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "operabiltityMainImpact",
+      "fieldType": "Impact",
+      "fieldValues": "Image,HR,Client,Financial,Contract"
+    },
+    {
+      "fieldName": "operabiltityComment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "operabiltityAction",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Evaluation",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "evaluation",
+      "relationshipName": "author",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "evaluation",
+      "relationshipName": "reviewer",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "project",
+      "otherEntityRelationshipName": "evaluations",
+      "relationshipName": "project",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

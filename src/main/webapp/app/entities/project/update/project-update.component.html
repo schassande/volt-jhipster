@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-project-heading" data-cy="ProjectCreateUpdateHeading" jhiTranslate="voltApp.project.home.createOrEditLabel">
+        Create or edit a Project
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="voltApp.project.bu" for="field_bu">Bu</label>
+          <input type="text" class="form-control" name="bu" id="field_bu" data-cy="bu" formControlName="bu" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="voltApp.project.sector" for="field_sector">Sector</label>
+          <input type="text" class="form-control" name="sector" id="field_sector" data-cy="sector" formControlName="sector" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="voltApp.project.vertical" for="field_vertical">Vertical</label>
+          <input type="text" class="form-control" name="vertical" id="field_vertical" data-cy="vertical" formControlName="vertical" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="voltApp.project.client" for="field_client">Client</label>
+          <input type="text" class="form-control" name="client" id="field_client" data-cy="client" formControlName="client" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="voltApp.project.project" for="field_project">Project</label>
+          <input type="text" class="form-control" name="project" id="field_project" data-cy="project" formControlName="project" />
+          <div *ngIf="editForm.get('project')!.invalid && (editForm.get('project')!.dirty || editForm.get('project')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('project')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
