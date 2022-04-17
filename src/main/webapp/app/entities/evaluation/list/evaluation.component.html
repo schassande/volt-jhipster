@@ -32,7 +32,11 @@
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="reset()">
-          <th scope="col" jhiSortBy="project.id">
+          <th scope="col" jhiSortBy="project.sector">
+            <span>Sector</span>
+            <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="project.project">
             <span jhiTranslate="voltApp.evaluation.project">Project</span>
             <fa-icon icon="sort"></fa-icon>
           </th>
@@ -70,6 +74,9 @@
       <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
         <tr *ngFor="let evaluation of evaluations; trackBy: trackId" data-cy="entityTable">
           <td>
+            <div *ngIf="evaluation.project">{{ this.evaluation.project?.sector }}</div>
+          </td>
+          <td>
             <div *ngIf="evaluation.project">
               <a [routerLink]="['/project', evaluation.project?.id, 'view']">{{ this.evaluation.project?.project }}</a>
             </div>
@@ -79,7 +86,11 @@
           </td>
           <td>{{ getEvalutionRisk(evaluation) }}</td>
           <td>{{ getEvalutionImpact(evaluation) }}</td>
-          <td>{{ evaluation.trend }}</td>
+          <td>
+            <span *ngIf="evaluation.trend == -1">Ca se dégrade</span>
+            <span *ngIf="evaluation.trend == 0">C'est stable</span>
+            <span *ngIf="evaluation.trend == 1">Ca s'améliore'</span>
+          </td>
           <td>{{ evaluation.comment }}</td>
           <td>{{ evaluation.author?.firstName }} {{ evaluation.author?.lastName }}</td>
           <td>{{ evaluation.reviewer?.firstName }} {{ evaluation.reviewer?.lastName }}</td>

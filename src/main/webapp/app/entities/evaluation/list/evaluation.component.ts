@@ -65,11 +65,6 @@ export class EvaluationComponent implements OnInit {
         },
       });
   }
-  getProject(evaluation: IEvaluation): IProject | undefined {
-    const project: IProject | undefined = this.projectsSharedCollection.find(p => p.id === evaluation.project);
-    console.log('getProject():', evaluation.project, project);
-    return project;
-  }
   reset(): void {
     this.page = 0;
     this.evaluations = [];
